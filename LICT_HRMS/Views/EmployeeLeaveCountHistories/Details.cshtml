@@ -1,0 +1,43 @@
+﻿@model LICT_HRMS.Models.EmployeeLeaveCountHistory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details Employee Leave Count History</h2>
+
+<div>
+    <h4>Employee Leave Count History</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Code)
+        </dd>
+
+        <dt>
+            Earned Leave Days
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EarnLeaveDays)
+        </dd>
+
+        <dt>
+            Without Pay Leave Days
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WithoutPayLeaveDays)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,43 @@
+﻿@model LICT_HRMS.Models.LeaveCount
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Leave Count Details</h2>
+
+<div>
+    <h4>LeaveCount</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+           Leave Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveType.Name)
+        </dd>
+
+        <dt>
+           Available Day
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableDay)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

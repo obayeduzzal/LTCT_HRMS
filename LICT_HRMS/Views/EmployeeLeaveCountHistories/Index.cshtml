@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LICT_HRMS.Models.EmployeeLeaveCountHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Leave Count Histories Lists</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            Earned Leave Days
+        </th>
+        <th>
+            Without Pay Leave
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EarnLeaveDays)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WithoutPayLeaveDays)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

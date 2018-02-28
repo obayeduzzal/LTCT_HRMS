@@ -1,0 +1,115 @@
+﻿@model LICT_HRMS.Models.Branch
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Branch</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            Openning Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OpeningTime)
+        </dd>
+
+        <dt>
+            Ending Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndingTime)
+        </dd>
+
+        <dt>
+            Late Calculation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsLateCalculated)
+        </dd>
+
+        <dt>
+           Late Consideration Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LateConsiderationTime)
+        </dd>
+
+        <dt>
+            Late Consideration Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LateConsiderationDay)
+        </dd>
+
+        <dt>
+            Late Consideration Percentage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LateDeductionPercentage)
+        </dd>
+
+        <dt>
+           Overtime Calculation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsOvertimeCalculated)
+        </dd>
+
+        <dt>
+            Overtime Consideration Time
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OvertimeConsiderationTime)
+        </dd>
+
+        <dt>
+            Overtime Payment Percentage
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OvertimePaymentPercentage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

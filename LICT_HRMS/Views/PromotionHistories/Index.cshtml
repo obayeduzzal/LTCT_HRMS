@@ -1,0 +1,64 @@
+﻿@model IEnumerable<LICT_HRMS.Models.PromotionHistory>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Promotion Histories List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Employee Name
+        </th>
+        <th>
+            From Designation
+        </th>
+        <th>
+            To Designation
+        </th>
+        <th>
+            Promotion Date
+        </th>
+        <th>
+            From Salary
+        </th>
+        <th>
+            To Salary
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Employee.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromDesignation.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToDesignation.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PromotionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FromSalary)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ToSalary)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

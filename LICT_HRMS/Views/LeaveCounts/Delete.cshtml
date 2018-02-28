@@ -1,0 +1,49 @@
+﻿@model LICT_HRMS.Models.LeaveCount
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Delete Leave Count</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Leave Count</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+            Leave Type
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LeaveType.Name)
+        </dd>
+
+        <dt>
+            Available Days
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AvailableDay)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

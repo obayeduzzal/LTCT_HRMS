@@ -1,0 +1,67 @@
+﻿@model LICT_HRMS.Models.PromotionHistory
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Promotion History Details</h2>
+
+<div>
+    <h4>Promotion History</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Employee Name
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+        <dt>
+            From Designation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromDesignation.Name)
+        </dd>
+
+        <dt>
+            To Designation
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToDesignation.Name)
+        </dd>
+
+        <dt>
+           Promotion Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PromotionDate)
+        </dd>
+
+        <dt>
+            From Salary
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromSalary)
+        </dd>
+
+        <dt>
+            To Salary
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToSalary)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

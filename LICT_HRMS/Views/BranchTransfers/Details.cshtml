@@ -1,0 +1,51 @@
+﻿@model LICT_HRMS.Models.BranchTransfer
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Employee Transfer Details</h2>
+
+<div>
+    <h4>Branch Transfer</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Code)
+        </dd>
+
+        <dt>
+            From Branch
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FromBranch.Name)
+        </dd>
+
+        <dt>
+            To Branch
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ToBranch.Name)
+        </dd>
+
+        <dt>
+            Transfer Date
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TransferDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
